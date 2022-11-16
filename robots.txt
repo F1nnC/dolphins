@@ -1,1 +1,1 @@
-Sitemap: https://f1nnc.github.io/dolphin/sitemap.xml
+Sitemap: https://f1nnc.github.io/dolphins/sitemap.xml
