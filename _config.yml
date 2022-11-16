@@ -6,11 +6,11 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: FinnSite
-description: My name is Finn Carpenter and this is my blog
+title: GroupDolphin
+description: Our group repo
 github_username: F1nnC
 # you can comment the below line out if your repo name is not different than your baseurl
-github_repo: "mysite"
+github_repo: "dolphin"
 
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value. 
@@ -34,13 +34,25 @@ url: "https://F1nnC.github.io" # the base hostname & protocol for your site, e.g
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/mysite" # the subpath of your site, e.g. "/blog".
+baseurl: "/dolphin" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
+  skin: dark
+  #  social_links:
+  #    twitter: NighthawkCoding
+  #    github: nighthawkcoders
+  #   youtube_channel: UClIKOsDS5dsfzFA3zveDT3Q
   social_links:
-    twitter: fastdotai
-    github: fastai
+    - { platform: github, user_url: ”
+https://github.com/nighthawkcoders
+“}
+    - { platform: twitter, user_url: ”
+https://twitter.com/NighthawkCoding
+“}
+    - { platform: youtube, user_url: ”
+https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q
+“}
 
 # Set this to true to get LaTeX math equation support
 use_math: 
