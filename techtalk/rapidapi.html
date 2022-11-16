@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python RapidAPI | FinnSite</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python RapidAPI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="APIs can be found all over the internet. A great consolidator of many APIs is RapidAPI. In this blog we will use a site to consolidates API stats. Learning a few lines of code and you can start extracting lots of data from the internet via APIs." />
+<meta property="og:description" content="APIs can be found all over the internet. A great consolidator of many APIs is RapidAPI. In this blog we will use a site to consolidates API stats. Learning a few lines of code and you can start extracting lots of data from the internet via APIs." />
+<link rel="canonical" href="https://f1nnc.github.io/mysite/techtalk/rapidapi" />
+<meta property="og:url" content="https://f1nnc.github.io/mysite/techtalk/rapidapi" />
+<meta property="og:site_name" content="FinnSite" />
+<meta property="og:image" content="https://f1nnc.github.io/mysite/images/rapidapi.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://f1nnc.github.io/mysite/images/rapidapi.png" />
+<meta property="twitter:title" content="Python RapidAPI" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-03T00:00:00-05:00","datePublished":"2022-10-03T00:00:00-05:00","description":"APIs can be found all over the internet. A great consolidator of many APIs is RapidAPI. In this blog we will use a site to consolidates API stats. Learning a few lines of code and you can start extracting lots of data from the internet via APIs.","headline":"Python RapidAPI","image":"https://f1nnc.github.io/mysite/images/rapidapi.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://f1nnc.github.io/mysite/techtalk/rapidapi"},"url":"https://f1nnc.github.io/mysite/techtalk/rapidapi"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/mysite/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://f1nnc.github.io/mysite/feed.xml" title="FinnSite" /><link rel="shortcut icon" type="image/x-icon" href="/mysite/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/mysite/">FinnSite</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/mysite/about/">About Me</a><a class="page-link" href="/mysite/search/">Search</a><a class="page-link" href="/mysite/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python RapidAPI</h1><p class="page-description">APIs can be found all over the internet.  A great consolidator of many APIs is <mark>RapidAPI</mark>.  In this blog we will use a site to consolidates API stats.  Learning a few lines of code and you can start extracting lots of data from the internet via APIs.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-03T00:00:00-05:00" itemprop="datePublished">
+        Oct 3, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      12 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/mysite/categories/#1.A">1.A</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/mysite/categories/#5.B">5.B</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/mysite/categories/#5.D">5.D</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/F1nnC/mysite/tree/master/_notebooks/2022-10-03-PBL-python_rapidapi.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/mysite/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/F1nnC/mysite/master?filepath=_notebooks%2F2022-10-03-PBL-python_rapidapi.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/mysite/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/F1nnC/mysite/blob/master/_notebooks/2022-10-03-PBL-python_rapidapi.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/mysite/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FF1nnC%2Fmysite%2Fblob%2Fmaster%2F_notebooks%2F2022-10-03-PBL-python_rapidapi.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/mysite/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Python,-RapidAPI-Terms">Python, RapidAPI Terms </a></li>
+<li class="toc-entry toc-h3"><a href="#Covid19-RapidAPI-Example">Covid19 RapidAPI Example </a></li>
+<li class="toc-entry toc-h3"><a href="#Digital-Coin-Example">Digital Coin Example </a></li>
+<li class="toc-entry toc-h3"><a href="#Formatting-Digital-Coin-example">Formatting Digital Coin example </a></li>
+<li class="toc-entry toc-h3"><a href="#Go-deeper-into-APIs">Go deeper into APIs </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-10-03-PBL-python_rapidapi.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python,-RapidAPI-Terms">
+<a class="anchor" href="#Python,-RapidAPI-Terms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python, RapidAPI Terms<a class="anchor-link" href="#Python,-RapidAPI-Terms"> </a>
+</h3>
+<blockquote>
+<p>APIs and tooling like Jupyter docs allows many opportunities in fields like Data Science.  As more and more developers use APIs, they build standards in how you setup a client, send requests and receive information...</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Covid19-RapidAPI-Example">
+<a class="anchor" href="#Covid19-RapidAPI-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Covid19 RapidAPI Example<a class="anchor-link" href="#Covid19-RapidAPI-Example"> </a>
+</h3>
+<blockquote>
+<p>To begin the API journey.  You need to find an API provider.</p>
+</blockquote>
+<ul>
+<li>RapidAPI is a great option.  You must setup and account, but there are many free options.</li>
+<li>Goto this page for starters, the <a href="https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/">Corona virus World and India data</a>- Under Code Snippets pick Python - Requests</li>
+</ul>
+<p>RapidAPI, you will select Python Requests type of code to work with you Notebook.</p>
+<ul>
+<li>The url is the endpoint to which the API is directed</li>
+<li>The headers is a dictionary data structure to send special messaging to the endpoint </li>
+<li>The requests.request() python function is used to send a request and retrieve their responses</li>
+<li>The response variable receives result of of the request in JSON text</li>
+</ul>
+<p>Next step, is to format the response according to your data science needs</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">Requests is a HTTP library for the Python programming language. </span>
+<span class="sd">The goal of the project is to make HTTP requests simpler and more human-friendly. </span>
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="sd">"""</span>
+<span class="sd">RapidAPI is the world's largest API Marketplace. </span>
+<span class="sd">Developers use Rapid API to discover and connect to thousands of APIs. </span>
+<span class="sd">"""</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://corona-virus-world-and-india-data.p.rapidapi.com/api"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'x-rapidapi-key'</span><span class="p">:</span> <span class="s2">"8222bd61f1mshad1ad1dfca1b2bcp1aa093jsnd4c03fb4a7ae"</span><span class="p">,</span>
+    <span class="s1">'x-rapidapi-host'</span><span class="p">:</span> <span class="s2">"corona-virus-world-and-india-data.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="c1"># Request Covid Data</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="c1"># print(response.text)  # uncomment this line to see raw data</span>
+
+<span class="c1"># This code looks for "world data"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"World Totals"</span><span class="p">)</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'world_total'</span><span class="p">)</span>  <span class="c1"># turn response to json() so we can extract "world_total"</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">world</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  <span class="c1"># this finds key, value pairs in country</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># This code looks for USA in "countries_stats"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Country Totals"</span><span class="p">)</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'countries_stat'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>  <span class="c1"># countries is a list</span>
+    <span class="k">if</span> <span class="n">country</span><span class="p">[</span><span class="s2">"country_name"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"USA"</span><span class="p">:</span>  <span class="c1"># this filters for USA</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">country</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>  <span class="c1"># this finds key, value pairs in country</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>World Totals
+total_cases 509,268,964
+new_cases 204,268
+total_deaths 6,242,509
+new_deaths 630
+total_recovered 461,827,849
+active_cases 41,198,606
+serious_critical 42,510
+total_cases_per_1m_population 65,334
+deaths_per_1m_population 800.9
+statistic_taken_at 2022-04-24 11:18:01
+
+Country Totals
+country_name USA
+cases 82,649,779
+deaths 1,018,316
+region 
+total_recovered 80,434,925
+new_deaths 0
+new_cases 0
+serious_critical 1,465
+active_cases 1,196,538
+total_cases_per_1m_population 247,080
+deaths_per_1m_population 3,044
+total_tests 1,000,275,726
+tests_per_1m_population 2,990,303
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Digital-Coin-Example">
+<a class="anchor" href="#Digital-Coin-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Digital Coin Example<a class="anchor-link" href="#Digital-Coin-Example"> </a>
+</h3>
+<blockquote>
+<p>This example provides digital coin feedback (ie Bitcoin).  It include popularity, price, symbols, etc.</p>
+<ul>
+<li>A valid X-RapidAPI-Key is required.  Look in code for link to RapidAPI page</li>
+<li>Read all comments in code for further guidance</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># RapidAPI page https://rapidapi.com/Coinranking/api/coinranking1/</span>
+
+<span class="c1"># Begin Rapid API Code</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://coinranking1.p.rapidapi.com/coins"</span>
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"referenceCurrencyUuid"</span><span class="p">:</span><span class="s2">"yhjMzLPhuIDl"</span><span class="p">,</span><span class="s2">"timePeriod"</span><span class="p">:</span><span class="s2">"24h"</span><span class="p">,</span><span class="s2">"tiers[0]"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"orderBy"</span><span class="p">:</span><span class="s2">"marketCap"</span><span class="p">,</span><span class="s2">"orderDirection"</span><span class="p">:</span><span class="s2">"desc"</span><span class="p">,</span><span class="s2">"limit"</span><span class="p">:</span><span class="s2">"50"</span><span class="p">,</span><span class="s2">"offset"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">}</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="s2">"X-RapidAPI-Key"</span><span class="p">:</span> <span class="s2">"jcmbea0fa2ff5msh7f14bf69be38ca6p175482jsn6c4988114560"</span><span class="p">,</span>  <span class="c1"># place your key here</span>
+	<span class="s2">"X-RapidAPI-Host"</span><span class="p">:</span> <span class="s2">"coinranking1.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">querystring</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># End Rapid API Code</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>  <span class="c1"># convert response to python json object</span>
+
+<span class="c1"># Observe data from an API.  This is how data transports over the internet in a "JSON" text form</span>
+<span class="c1"># - The JSON "text" is formed in dictionary {} and list [] divisions</span>
+<span class="c1"># - To read the result, Data Scientist of  Developer converts JSON into human readable form</span>
+<span class="c1"># - Review the first line, look for the keys --  "status" and "data"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{"message":"You are not subscribed to this API."}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Formatting-Digital-Coin-example">
+<a class="anchor" href="#Formatting-Digital-Coin-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formatting Digital Coin example<a class="anchor-link" href="#Formatting-Digital-Coin-example"> </a>
+</h3>
+<blockquote>
+<p>JSON text transferred from the API in the previous cell was converted to a Python Dictionary called json.  The "coins" in the dictionary contain a list of the most relevant data.   Look at the code and comments to see how the original text is turned into something understandable.   Additionally, there are error check to make sure we are starting the code with the expectation that the API was run correctly.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">This cell is dependent on valid run of API above.</span>
+<span class="sd">- try and except code is making sure "json" was properly run above</span>
+<span class="sd">- inside second try is code that is used to process Coin API data</span>
+
+<span class="sd">Note.  Run this cell repeatedly to format data without re-activating API</span>
+<span class="sd">"""</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"JSON data is Python type: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json</span><span class="p">)))</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Extracting Coins JSON status, if the API worked</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'status'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"API status: "</span> <span class="o">+</span> <span class="n">status</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">()</span>
+        
+        <span class="c1"># Extracting Coins JSON data, data about the coins</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'data'</span><span class="p">)</span>
+        
+        <span class="c1"># Procedural abstraction of Print code for coins</span>
+        <span class="k">def</span> <span class="nf">print_coin</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"symbol"</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">"price"</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Icon Url: "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"iconUrl"</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Rank Url: "</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="s2">"coinrankingUrl"</span><span class="p">])</span>
+
+        <span class="c1"># Coins data was observed to be a list</span>
+        <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">'coins'</span><span class="p">]:</span>
+            <span class="n">print_coin</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+            
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Did you insert a valid key in X-RapidAPI-Key of API cell above?"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"This cell is dependent on running API call in cell above!"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>JSON data is Python type: &lt;class 'dict'&gt;
+Did you insert a valid key in X-RapidAPI-Key of API cell above?
+{'message': 'You are not subscribed to this API.'}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Go-deeper-into-APIs">
+<a class="anchor" href="#Go-deeper-into-APIs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Go deeper into APIs<a class="anchor-link" href="#Go-deeper-into-APIs"> </a>
+</h3>
+<blockquote>
+<p>Web Development vs Jupyter Notebook.  A notebook is certainly a great place to start.  But, for your end of Trimester project we want you to build the skill to reference and use APIs within your Project.  Here are some resources to get you started with this journey.</p>
+</blockquote>
+<ul>
+<li>In the Nighthawk Coders APCSP you can find an Overview and Examples using APIs:<a href="https://nighthawkcoders.github.io/APCSP/api/overview">APCSP APIs menu</a>- Using Covid RapidAPI<ul>
+<li>JavaScript frontend API code in APCSP Fastpages GitHub repo: <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-rapidapi.md">https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-rapidapi.md</a>
+</li>
+</ul>
+</li>
+<li>Making a Jokes API (this will next API tech talk)<ul>
+<li>Frontend. JavaScript frontend code in APCSP fastpages GitHub repo: <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-jokes.md">https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-jokes.md</a>
+</li>
+<li>Backend Endpoints.  Python code that allows Frontend access: <a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api.py">https://github.com/nighthawkcoders/flask_portfolio/blob/main/api.py</a>
+</li>
+<li>Backend Jokes Management.  Python code that support Create, Read, Update, Delete (CRUD): <a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/model_jokes.py">https://github.com/nighthawkcoders/flask_portfolio/blob/main/model_jokes.py</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+<blockquote>
+<p>Find and use an API as part of your project.  An API and a little coding logic will be a big step toward getting meaningful data for a project.  There are many API providers, find one that might work for your project to complete this hack. When picking an API you are looking for something that will work with either JavaScript Fetch or Python Request.  Here are some samples, these are not qualified in any way.</p>
+<ul>
+<li>
+<a href="https://rapidapi.com/collection/list-of-free-apis">RapidAPI</a>- <a href="https://github.com/public-apis/public-apis/blob/master/README.md">GitHub Project</a>
+</li>
+<li><a href="https://nordicapis.com/9-free-public-apis-that-offer-up-some-cool-open-data/">No Key APIs Article</a></li>
+<li><a href="https://developer.twitter.com/en/docs/twitter-api">Twitter Developer</a></li>
+<li><a href="https://developers.google.com/apis-explorer">Google Developer</a></li>
+<li><a href="https://www.reddit.com/dev/api/">Reddit Developer</a></li>
+</ul>
+<p>Show API and format results in either Web Page or Jupyter Notebook.  Ultimately, I will expect that we do APIs in backend (Python/Flask).  However, for this Hack you can pick your preference.  We will discuss pros and cons in next API tech talk.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">artist</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://spotify81.p.rapidapi.com/artist_singles"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"2w9zwq3AktTeYYMuhMjju8"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="s2">"X-RapidAPI-Key"</span><span class="p">:</span> <span class="s2">"8222bd61f1mshad1ad1dfca1b2bcp1aa093jsnd4c03fb4a7ae"</span><span class="p">,</span>
+	<span class="s2">"X-RapidAPI-Host"</span><span class="p">:</span> <span class="s2">"spotify81.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="n">song1</span> <span class="o">=</span> <span class="s2">"placeholder"</span>
+<span class="n">song2</span> <span class="o">=</span> <span class="s2">"placeholder"</span>
+<span class="n">song3</span> <span class="o">=</span> <span class="s2">"placeholder"</span>
+
+<span class="n">artist1</span> <span class="o">=</span> <span class="s2">"placeholder"</span>
+<span class="n">artist2</span> <span class="o">=</span> <span class="s2">"placeholder"</span>
+<span class="n">artist3</span> <span class="o">=</span> <span class="s2">"placeholder"</span>
+
+<span class="c1">#create data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="n">song1</span><span class="p">,</span> <span class="n">artist1</span><span class="p">],</span> 
+        <span class="p">[</span><span class="n">song2</span><span class="p">,</span> <span class="n">artist2</span><span class="p">],</span> 
+        <span class="p">[</span><span class="n">song3</span><span class="p">,</span> <span class="n">artist3</span><span class="p">],]</span>
+  
+<span class="c1">#define header names</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Song"</span><span class="p">,</span> <span class="s2">"Artist"</span><span class="p">]</span>
+  
+<span class="c1">#display table</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">col_names</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Song         Artist
+-----------  -----------
+placeholder  placeholder
+placeholder  placeholder
+placeholder  placeholder
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">artist</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://spotify81.p.rapidapi.com/artist_singles"</span>
+
+<span class="n">querystring</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"2w9zwq3AktTeYYMuhMjju8"</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="s2">"X-RapidAPI-Key"</span><span class="p">:</span> <span class="s2">"8222bd61f1mshad1ad1dfca1b2bcp1aa093jsnd4c03fb4a7ae"</span><span class="p">,</span>
+	<span class="s2">"X-RapidAPI-Host"</span><span class="p">:</span> <span class="s2">"spotify81.p.rapidapi.com"</span>
+<span class="p">}</span>
+
+<span class="c1"># response = requests.request("GET", url, headers=headers, params=querystring)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'data': {'artist': {'discography': {'singles': {'totalCount': 213, 'items': [{'releases': {'items': [{'id': '1ez9K0s4OR2V0f8tttDv75', 'uri': 'spotify:album:1ez9K0s4OR2V0f8tttDv75', 'name': 'Hello Hello', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-10-07T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02beb276e8ce6ce9d53cfff5c0', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851beb276e8ce6ce9d53cfff5c0', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273beb276e8ce6ce9d53cfff5c0', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'CZg36vpcTdKIbr8Gcmk05w', 'shareUrl': 'https://open.spotify.com/album/1ez9K0s4OR2V0f8tttDv75?si=CZg36vpcTdKIbr8Gcmk05w'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '70GSvRwILjynWHs5qAcDPY', 'uri': 'spotify:album:70GSvRwILjynWHs5qAcDPY', 'name': 'Wherever You Go (with Reynmen)', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-08-26T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02e59b6b12320b639a72c0f360', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851e59b6b12320b639a72c0f360', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273e59b6b12320b639a72c0f360', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': '82N5v0wiQ9OGapNpT6pMLw', 'shareUrl': 'https://open.spotify.com/album/70GSvRwILjynWHs5qAcDPY?si=82N5v0wiQ9OGapNpT6pMLw'}, 'tracks': {'totalCount': 2}}]}}, {'releases': {'items': [{'id': '33zJ4SIK5Tf8YXlYSsvelT', 'uri': 'spotify:album:33zJ4SIK5Tf8YXlYSsvelT', 'name': 'Wherever You Go', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-08-26T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02eefcba3ad842daa6f87a6896', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851eefcba3ad842daa6f87a6896', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273eefcba3ad842daa6f87a6896', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'kasjJ-YoT0G1qMmx--LXRg', 'shareUrl': 'https://open.spotify.com/album/33zJ4SIK5Tf8YXlYSsvelT?si=kasjJ-YoT0G1qMmx--LXRg'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '63oBgdhy76nv9I1LLhZQ3b', 'uri': 'spotify:album:63oBgdhy76nv9I1LLhZQ3b', 'name': 'Wherever You Go (Mert Hakan Remix)', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-08-23T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02259e22b2b451d91d2158dcc5', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851259e22b2b451d91d2158dcc5', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273259e22b2b451d91d2158dcc5', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'VxirXtc-TWuo72hK47GBSw', 'shareUrl': 'https://open.spotify.com/album/63oBgdhy76nv9I1LLhZQ3b?si=VxirXtc-TWuo72hK47GBSw'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '7jeN8JERMZOCQfn0ETUnYY', 'uri': 'spotify:album:7jeN8JERMZOCQfn0ETUnYY', 'name': 'Magical Love (Maesic Remix)', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-06-18T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e022b961fe8d7fde37d76563247', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048512b961fe8d7fde37d76563247', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2732b961fe8d7fde37d76563247', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'aKMeEt5vTA-dLZ9HrWssGQ', 'shareUrl': 'https://open.spotify.com/album/7jeN8JERMZOCQfn0ETUnYY?si=aKMeEt5vTA-dLZ9HrWssGQ'}, 'tracks': {'totalCount': 3}}]}}, {'releases': {'items': [{'id': '3hqE43sWPNyUZZut3VNgMU', 'uri': 'spotify:album:3hqE43sWPNyUZZut3VNgMU', 'name': 'Magical Love', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-06-17T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02d8216408dc5ecb0be72e9730', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851d8216408dc5ecb0be72e9730', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273d8216408dc5ecb0be72e9730', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': '73E7WA56RlmuS4uai4ObVg', 'shareUrl': 'https://open.spotify.com/album/3hqE43sWPNyUZZut3VNgMU?si=73E7WA56RlmuS4uai4ObVg'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '1UbFg8AzX8omvIxlQEMKUO', 'uri': 'spotify:album:1UbFg8AzX8omvIxlQEMKUO', 'name': 'Talk', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-06-03T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02dc487236aeef607d7b172d73', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851dc487236aeef607d7b172d73', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273dc487236aeef607d7b172d73', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'bZ87whhoRaq6qAbcZ_lfgg', 'shareUrl': 'https://open.spotify.com/album/1UbFg8AzX8omvIxlQEMKUO?si=bZ87whhoRaq6qAbcZ_lfgg'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '4rbCiSzxFxubcovAjLsdVv', 'uri': 'spotify:album:4rbCiSzxFxubcovAjLsdVv', 'name': 'Tare', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-04-05T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e0255c99de91c07edf0092ebc4d', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d0000485155c99de91c07edf0092ebc4d', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b27355c99de91c07edf0092ebc4d', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'x-rL-bm7TUyRt71pOuO2gg', 'shareUrl': 'https://open.spotify.com/album/4rbCiSzxFxubcovAjLsdVv?si=x-rL-bm7TUyRt71pOuO2gg'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '7DDqCPpZjHqLK3fuD1JaD6', 'uri': 'spotify:album:7DDqCPpZjHqLK3fuD1JaD6', 'name': 'Tare (Albwho Remix)', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-04-01T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02ef264c213f1f426953bf4a57', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851ef264c213f1f426953bf4a57', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273ef264c213f1f426953bf4a57', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'OyivIOd3QYWQGA0biH2a5Q', 'shareUrl': 'https://open.spotify.com/album/7DDqCPpZjHqLK3fuD1JaD6?si=OyivIOd3QYWQGA0biH2a5Q'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '49suZMTVKKsLNX34EqQ7mc', 'uri': 'spotify:album:49suZMTVKKsLNX34EqQ7mc', 'name': 'Déjà Vu', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-03-25T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e026bc9d2d0e42cddd1c6977586', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048516bc9d2d0e42cddd1c6977586', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2736bc9d2d0e42cddd1c6977586', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'OLMT80KHROWAqjtol_XSSA', 'shareUrl': 'https://open.spotify.com/album/49suZMTVKKsLNX34EqQ7mc?si=OLMT80KHROWAqjtol_XSSA'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '4MCOi8ZgIluCg50QR2iU1w', 'uri': 'spotify:album:4MCOi8ZgIluCg50QR2iU1w', 'name': 'UP (Kaluma Remix)', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-03-10T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e024b30c10e877142918872ad2f', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048514b30c10e877142918872ad2f', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2734b30c10e877142918872ad2f', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': '1Dw-fSCeS8y8ORbfy5-HWw', 'shareUrl': 'https://open.spotify.com/album/4MCOi8ZgIluCg50QR2iU1w?si=1Dw-fSCeS8y8ORbfy5-HWw'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '4gUM4llwsErkQQ1VqBvE2D', 'uri': 'spotify:album:4gUM4llwsErkQQ1VqBvE2D', 'name': 'UP (Arem Ozguc &amp; Arman Aydin Remix)', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-02-28T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e022c9c3a51bea7bc70a92a5c94', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048512c9c3a51bea7bc70a92a5c94', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2732c9c3a51bea7bc70a92a5c94', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'coXkyu5sQQ-xnuTtFz3kxg', 'shareUrl': 'https://open.spotify.com/album/4gUM4llwsErkQQ1VqBvE2D?si=coXkyu5sQQ-xnuTtFz3kxg'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '49D6ut4LdJCBD90wRWzfe6', 'uri': 'spotify:album:49D6ut4LdJCBD90wRWzfe6', 'name': 'Lalele', 'type': 'SINGLE', 'date': {'year': 2022, 'isoString': '2022-01-20T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e021f43d9d7588ec1c832b8f2dc', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048511f43d9d7588ec1c832b8f2dc', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2731f43d9d7588ec1c832b8f2dc', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'eJnmQkKLRl2yhWoaHbOU6g', 'shareUrl': 'https://open.spotify.com/album/49D6ut4LdJCBD90wRWzfe6?si=eJnmQkKLRl2yhWoaHbOU6g'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '2jA1exLaHCcpHtDrGLKTmy', 'uri': 'spotify:album:2jA1exLaHCcpHtDrGLKTmy', 'name': 'UP', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-12-17T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e027bd254131ac1f8678448d076', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048517bd254131ac1f8678448d076', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2737bd254131ac1f8678448d076', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'hy3k3x_uQMC6JvzqJhDOlw', 'shareUrl': 'https://open.spotify.com/album/2jA1exLaHCcpHtDrGLKTmy?si=hy3k3x_uQMC6JvzqJhDOlw'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '6uvP8hlbI9X3RleKNVmBzT', 'uri': 'spotify:album:6uvP8hlbI9X3RleKNVmBzT', 'name': 'UP (Robert Cristian Remix)', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-12-03T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e021271f5f16702f3516f86579d', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048511271f5f16702f3516f86579d', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2731271f5f16702f3516f86579d', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'daNp_2sjTNysFwPNj0yZHw', 'shareUrl': 'https://open.spotify.com/album/6uvP8hlbI9X3RleKNVmBzT?si=daNp_2sjTNysFwPNj0yZHw'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '5kjggiiZEcRzFvQ4rowAsQ', 'uri': 'spotify:album:5kjggiiZEcRzFvQ4rowAsQ', 'name': 'De Dragul Tău', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-11-26T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02da7c4e91509943b3c7cf8ef4', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851da7c4e91509943b3c7cf8ef4', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273da7c4e91509943b3c7cf8ef4', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': '6Z38rQNCT0yjo7C_5ziQkQ', 'shareUrl': 'https://open.spotify.com/album/5kjggiiZEcRzFvQ4rowAsQ?si=6Z38rQNCT0yjo7C_5ziQkQ'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '21x0bCve7UJ7ZAapjt8GFz', 'uri': 'spotify:album:21x0bCve7UJ7ZAapjt8GFz', 'name': 'UP', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-10-29T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e0265f27da14d572556a8a59755', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d0000485165f27da14d572556a8a59755', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b27365f27da14d572556a8a59755', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'iy67sksRQ9-ZPdK7_CQwSg', 'shareUrl': 'https://open.spotify.com/album/21x0bCve7UJ7ZAapjt8GFz?si=iy67sksRQ9-ZPdK7_CQwSg'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '3wBRVC1SMfIEdsr9thFSYJ', 'uri': 'spotify:album:3wBRVC1SMfIEdsr9thFSYJ', 'name': 'UP (Vadim Adamov &amp; Hardphol Remix)', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-10-28T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e0200296e006391b562e8c70563', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d0000485100296e006391b562e8c70563', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b27300296e006391b562e8c70563', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'KpM4AyGLTQahhva6UvC43g', 'shareUrl': 'https://open.spotify.com/album/3wBRVC1SMfIEdsr9thFSYJ?si=KpM4AyGLTQahhva6UvC43g'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '605jn7Lsj6RD4ovYCsnrxe', 'uri': 'spotify:album:605jn7Lsj6RD4ovYCsnrxe', 'name': 'UP (Mert Hakan &amp; Onur Betin Remix)', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-10-28T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e023a3334b5c3ac49b938312f03', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d000048513a3334b5c3ac49b938312f03', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b2733a3334b5c3ac49b938312f03', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'Z-NYpJYTQ8S4gjzuOfBDLA', 'shareUrl': 'https://open.spotify.com/album/605jn7Lsj6RD4ovYCsnrxe?si=Z-NYpJYTQ8S4gjzuOfBDLA'}, 'tracks': {'totalCount': 1}}]}}, {'releases': {'items': [{'id': '3QJqG1fLaNGsgjVUroIPCT', 'uri': 'spotify:album:3QJqG1fLaNGsgjVUroIPCT', 'name': 'UP (Filatov &amp; Karas Remix)', 'type': 'SINGLE', 'date': {'year': 2021, 'isoString': '2021-10-28T00:00:00Z'}, 'coverArt': {'sources': [{'url': 'https://i.scdn.co/image/ab67616d00001e02d73086d4cbe065734d124185', 'width': 300, 'height': 300}, {'url': 'https://i.scdn.co/image/ab67616d00004851d73086d4cbe065734d124185', 'width': 64, 'height': 64}, {'url': 'https://i.scdn.co/image/ab67616d0000b273d73086d4cbe065734d124185', 'width': 640, 'height': 640}]}, 'playability': {'playable': True, 'reason': 'PLAYABLE'}, 'sharingInfo': {'shareId': 'gItuHw_cRXuXdbwvi5oLdQ', 'shareUrl': 'https://open.spotify.com/album/3QJqG1fLaNGsgjVUroIPCT?si=gItuHw_cRXuXdbwvi5oLdQ'}, 'tracks': {'totalCount': 1}}]}}]}}}}, 'extensions': {'cacheControl': {'version': 1, 'hints': []}}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/mysite/techtalk/rapidapi" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/mysite/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/mysite/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/mysite/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>My name is Finn Carpenter and this is my blog</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/mysite/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/mysite/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
