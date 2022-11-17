@@ -2,6 +2,6 @@
 toc: true
 layout: post
 comments: true
-description: These are my project meeting notes.
-title:  Project Meeting Notes
+description: This is my lesson plan.
+title:  Lesson Plan
 ---
