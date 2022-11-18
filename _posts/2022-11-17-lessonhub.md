@@ -16,3 +16,12 @@ type: pbl
 - How are Booleans used in code
 ### [Link]({{site.baseurl}}/lesson3:5) to 3.5 lesson
 
+## 3.6)
+### Essential Questions
+
+## 3.7)
+### Essential Questions
+
+## Kahoot
+
+## Homework
