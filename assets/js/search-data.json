@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Lesson Plan",
-            "content": "Lesson Plan . 3.5) . Essential Questions . What are booleans | How are Booleans used in code Link to 3.5 lesson . | . 3.6) . Link to 3.6 lesson .",
+            "content": "Lesson Plan . 3.5) . Essential Questions . What are booleans | How are Booleans used in code Link to 3.5 lesson . | . 3.6) . Link to 3.6 lesson . 3.7) . Essential Questions . Kahoot . Homework .",
             "url": "https://f1nnc.github.io/dolphins/lesson",
             "relUrl": "/lesson",
             "date": " • Nov 17, 2022"
@@ -13,17 +13,6 @@
   
     
         ,"post1": {
-            "title": "Lesson Plan",
-            "content": "",
-            "url": "https://f1nnc.github.io/dolphins/2022/11/17/LessonPlan.html",
-            "relUrl": "/2022/11/17/LessonPlan.html",
-            "date": " • Nov 17, 2022"
-        }
-        
-    
-  
-    
-        ,"post2": {
             "title": "3.6",
             "content": "Conditionals . IF (condition) . { . &lt;block of statements&gt; . } . ELSE . { . &lt;second block of statements&gt; . } . Determine if Numbers is in Range . number ← input . IF (number &gt; 0 AND number &lt; 10) . { . DISPLAY(number) . } . DISPLAY (“Goodbye!”) . Multiple of 3 . Set number to input | If number MOD 3 = 0, display “Multiple of 3” | Else, display “Not a multiple of 3”. | if number % 3 = 0: . print(&quot;Multiple of 3&quot;) . else: . print(&quot;Not a multiple of 3&quot;) . Hacks . Calculate the sum of two numbers. If the sum is greater than 100, display 100; otherwise, display the sum. | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:6",
@@ -34,7 +23,7 @@
     
   
     
-        ,"post3": {
+        ,"post2": {
             "title": "3.5",
             "content": "What is a Boolean . The defention of a Boolean is a denoting a system of algebraic notation used to represent logical propositions, especially in computing and electronics. | A boolean expersions are either true or false | What do we use to represent them (Hint think of how domain/range of graph is answered) | . Examples . You have to be the age 16 or above to drive | Each cart can only hold 4 people | . Logical Operators . NOT, it displays the opposite of whatever the data is. Mainly used for true/false, and does not effect the variable. | AND, used to evaulte two conditions together and determine if both condintions are met | OR, when using or the function only looks to see if one of the conditions is met then will | . Hacks . Write a logical experision for this secarino, You win the game if you have at least 20 points and 3 live left or if you have 100 points and more than 0 lives left. | Write a logical experision for example 1 NOT using &gt;= or &lt;= | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:5",
