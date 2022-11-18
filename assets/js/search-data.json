@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "3.6",
-            "content": "Conditionals . IF (condition) { } ELSE { } . Determine if Numbers is in Range . number ← input . IF (number &gt; 0 AND number &lt; 10) . { . DISPLAY(number) . } . DISPLAY (“Goodbye!”) . Multiple of 3 . Set number to input | If number MOD 3 = 0, display “Multiple of 3” | Else, display “Not a multiple of 3”. | if number % 3 = 0: . print(“Multiple of 3”) . else: . print(“Not a multiple of 3”) . Hacks . Calculate the sum of two numbers. If the sum is greater than 100, display 100; otherwise, display the sum. | .",
+            "content": "How to Make the Lesson . Take notes based on the videos in the section and the binary section | Notes should not be too long | Notes should be clear for the whole class to understand | Give the class a few examples to solve based on the lessons | Have the class use Hacks to supplement learning of lesson material | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:6",
             "relUrl": "/lesson3:6",
             "date": " • Nov 17, 2022"
