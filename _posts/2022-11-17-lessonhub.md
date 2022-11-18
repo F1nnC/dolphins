@@ -13,5 +13,5 @@ type: pbl
 ### Essential Questions
 - What are booleans
 - How are Booleans used in code
-### [Link]({{site.baseurl}}/lesson/3.5) to 3.5 lesson
+### [Link]({{site.baseurl}}/lesson3:5) to 3.5 lesson
 
