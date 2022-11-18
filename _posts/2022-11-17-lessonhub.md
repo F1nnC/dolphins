@@ -1,6 +1,7 @@
 ---
 title: Lesson Plan
-layout: default
+layout: post
+comments: true
 description: A hub/guide for 3.5 to 3.7
 permalink: /lesson
 categories: [3.5, 3.6, 3.7]
