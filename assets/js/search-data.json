@@ -26,8 +26,8 @@
         ,"post2": {
             "title": "3.5",
             "content": "What is a Boolean . The defention of a Boolean is a denoting a system of algebraic notation used to represent logical propositions, especially in computing and electronics. | A boolean expersions are either true or false | What do we use to represent them (Hint think of how domain/range of graph is answered) | . Examples . You have to be the age 16 or above to drive | Each cart can only hold 4 people | . Logical Operators . NOT, it displays the opposite of whatever the data is. Mainly used for true/false, and does not effect the variable. | AND, used to evaulte two conditions together and determine if both condintions are met | OR, only looks to see if one of the conditions is met | . Hacks . Write a logical experision for this secarino, You win the game if you have at least 20 points and 3 live left or if you have 100 points and more than 0 lives left. | Write a logical experision for example 1 NOT using &gt;= or &lt;= | .",
-            "url": "https://f1nnc.github.io/dolphins/lesson/3.5",
-            "relUrl": "/lesson/3.5",
+            "url": "https://f1nnc.github.io/dolphins/lesson3:5",
+            "relUrl": "/lesson3:5",
             "date": " • Nov 17, 2022"
         }
         
