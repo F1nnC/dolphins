@@ -17,7 +17,7 @@ type: pbl
 ### [Link]({{site.baseurl}}/lesson3:5) to 3.5 lesson
 
 ## 3.6)
-### Essential Questions
+### [Link]({{site.baseurl}}/lesson3:6) to 3.6 lesson
 
 ## 3.7)
 ### Essential Questions
