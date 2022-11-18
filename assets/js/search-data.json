@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "3.6",
-            "content": "Conditionals . IF (condition) { } ELSE { } . Determine if Numbers is in Range . number ← input IF (number &gt; 0 AND number &lt; 10) { DISPLAY(number) } DISPLAY (“Goodbye!”) . Multiple of 3 . Set number to input | If number MOD 3 = 0, display “Multiple of 3” | Else, display “Not a multiple of 3”. | number ← input IF (number MOD 3 = 0) { DISPLAY(“Multiple of 3”) } ELSE { DISPLAY (“Not a multiple of 3”) } . Hacks . Calculate the sum of two numbers. If the sum is greater than 100, display 100; otherwise, display the sum. | .",
+            "content": "Conditionals . IF (condition) { } ELSE { } . Determine if Numbers is in Range . number ← input . IF (number &gt; 0 AND number &lt; 10) . { . DISPLAY(number) . } . DISPLAY (“Goodbye!”) . Multiple of 3 . Set number to input | If number MOD 3 = 0, display “Multiple of 3” | Else, display “Not a multiple of 3”. | number ← input IF (number MOD 3 = 0) { DISPLAY(“Multiple of 3”) } ELSE { DISPLAY (“Not a multiple of 3”) } . Hacks . Calculate the sum of two numbers. If the sum is greater than 100, display 100; otherwise, display the sum. | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:6",
             "relUrl": "/lesson3:6",
             "date": " • Nov 17, 2022"
