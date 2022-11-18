@@ -1,0 +1,17 @@
+---
+title: Lesson Plan
+layout: default
+description: A hub/guide for 3.5 to 3.7
+permalink: /lesson
+categories: [3.5, 3.6, 3.7]
+tags: [html, liquid, javascript]
+type: pbl
+---
+
+# Lesson Plan
+## 3.5)
+### Essential Questions
+- What are booleans
+- How are Booleans used in code
+### [Link]({{site.baseurl}}/lesson/3.5) to 3.5 lesson
+
