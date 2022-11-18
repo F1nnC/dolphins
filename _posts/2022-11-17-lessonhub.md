@@ -12,8 +12,8 @@ type: pbl
 # Lesson Plan
 ## 3.5)
 ### Essential Questions
-- What are booleans
-- How are Booleans used in code
+ - What are booleans
+ - How are Booleans used in code
 ### [Link]({{site.baseurl}}/lesson3:5) to 3.5 lesson
 
 ## 3.6)
@@ -24,7 +24,10 @@ type: pbl
 
 ## 3.7)
 ### Essential Questions
-
+ - What is a nested conditional statment? 
+ - Can a nested conditional stament give more than two results? 
+ - What is an examole of a nested conditional stament
+### [Link]({{site.baseurl}}/lesson3:7) to 3.7 lesson
 ## Kahoot
 
 ## Homework
