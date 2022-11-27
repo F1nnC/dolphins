@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Conditionals",
+            "content": "Learning Objectives (Some Things You Might Want to Keep Note Of) . Conditionals allow for the expression of algorithms that utilize selection without a programming language. | Writing conditional statements is key to computer science. | . Key Terms . Selection: The specific block of code that will execute depending on the algorithm condition returning true or false. | Algorithm: &quot;A finite set of instructions that accomplish a specific task.&quot; | Conditional Statement / If-Statement: A statement that affects the sequence of control by executing certain statements depending on the value of a boolean. | . Below is an example of an algorithm in JavaScript that uses selection: . function isEven(parameter) { if (parameter % 2 == 0) { console.log(&quot;The number is even.&quot;); } else if (parameter % 2 != 0) { console.log(&quot;The number is odd.&quot;) } } isEven(4) . The number is even. . A computer science student such as yourself will see conditional statements in JavaScript a lot. Below is an example of one in action: . if (30 == 7) { console.log(&quot;The condition is true&quot;) } . That is one conditional statement, but this algorithm is too simple to have anything done with it. Below is an algorithm building on the previous algorithm: . if (30 == 7) { console.log(&quot;The condition is true&quot;) } else if (30 != 7) { console.log(&quot;The condition is false&quot;) } . The condition is false . Conditional statements can be used for many a purpose. The algorithm above was quite simple, but conditionals can be found in more complex algorithms. . Shruti, this is where you can start editing. ACCORDING TO THE THIRD VIDEO IN SECTION 3.6. Create content below this section, and add hacks that need to be completed depending on the video. Delete this markdown section after you&#39;re done. Best of luck! . Hacks . For the first hack, pretend you are a school&#39;s test grader. Create an array with integers, each integer representing one score from a student&#39;s taken tests. If the average of the student&#39;s test scores are at least 75 percent, then display that the student is elligible for credit, and if not, display that the student must retake the tests over break. | The second hack is more number-oriented. Create an algorithm that calculates the sum of two numbers, then determines whether the sum is greater than or less than 100. | The hacks above was heavily derived from CollegeBoard. As a computer science student, you should be able to create an algorithm utilizing conditionals. Try something number-oriented if you get stuck. Creativity gets points. | .",
+            "url": "https://f1nnc.github.io/dolphins/conditionals",
+            "relUrl": "/conditionals",
+            "date": " • Nov 26, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Lesson Plan",
             "content": "Lesson Plan . 3.5) . Essential Questions . What are booleans | How are Booleans used in code Link to 3.5 lesson . | . 3.6) . Essential Questions . What are Conditionals | How are conditionals used in code Link to 3.6 lesson . | . 3.7) . Essential Questions . What is a nested conditional statment? | Can a nested conditional stament give more than two results? | What is an examole of a nested conditional stament Link to 3.7 lesson . Kahoot . | . Homework .",
             "url": "https://f1nnc.github.io/dolphins/lesson",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "3.7",
             "content": "Nested Conditionals . Nested conditional statements consist of conditional statements within conditional statements | An else if inside of another else if | Can be used for a varying amount of “else if statements.” The first if statement can represent if two coditions are true. The first else if can represent if only one or the other is true. The last else if represents if neither of the conditions are true. | Can have three different conditions | . Question 1 . If time is 4.5 and score is 1200, time &lt; 3 will be false, but score &gt; 1200 will be true. In this function, there are two conditions. However, at least one of condition becomes true, lives = live +1 will be executed . Question 2 . At first numScoops will be 3. Also, the cost will be 1.5*numScoops. If isWaffleCone is true and includesToppings is false, the cost = cost + 1 will be executed. In this case , the cost will be 4.5 at the end. . Examples . IF (condition 1) { } ELSE { IF (condition 2) { } } . Writing Nested Conditional Statements . Can be planned and writen out first | Flow chart is a possibility. Ask a question. If the statement is false end the flowchart with one result. If it is true then repeat the process once more. If this statement is false make a new result. Finally if the statement is true make a final result Take aways . | Learn how to determine the result of nested condtional statements | Nested conditional statements consist of conditional statements within conditional statements Hacks . | Create 3 differnt flow charts representing nested statements and transfer them into code. | Create a piece of code that displays four statements instead of three. Try to do more if you can. | Make piece of code that gives three different recommandations for possible classes to take at a scholl based on two different condtions. These conditions could be if the student likes STEM or not. | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:7",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "3.6",
             "content": "Conditionals . Conditionals are the way computers make decisions . Examples on How Conditionals are Used in Code . . Determine if Numbers is in Range . . Multiple of 3 . Set number to input | If number MOD 3 = 0, display “Multiple of 3” | Else, display “Not a multiple of 3”. | . Hacks . Calculate the sum of two numbers. If the sum is greater than 100, display 100; otherwise, display the sum. | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:6",
@@ -34,7 +45,7 @@
     
   
     
-        ,"post3": {
+        ,"post4": {
             "title": "3.5",
             "content": "What is a Boolean . The defention of a Boolean is a denoting a system of algebraic notation used to represent logical propositions, especially in computing and electronics. | A boolean expersions are either true or false | What do we use to represent them (Hint think of how domain/range of graph is answered) | . Examples . You have to be the age 16 or above to drive | Each cart can only hold 4 people | . Logical Operators . NOT, it displays the opposite of whatever the data is. Mainly used for true/false, and does not effect the variable. | AND, used to evaulte two conditions together and determine if both condintions are met | OR, when using or the function only looks to see if one of the conditions is met then will | . Hacks . Write a logical experision for this secarino, You win the game if you have at least 20 points and 3 live left or if you have 100 points and more than 0 lives left. | Write a logical experision for example 1 NOT using &gt;= or &lt;= | .",
             "url": "https://f1nnc.github.io/dolphins/lesson3:5",

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Conditionals | GroupDolphin</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Conditionals" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Our group repo" />
+<meta property="og:description" content="Our group repo" />
+<link rel="canonical" href="https://f1nnc.github.io/dolphins/conditionals" />
+<meta property="og:url" content="https://f1nnc.github.io/dolphins/conditionals" />
+<meta property="og:site_name" content="GroupDolphin" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-26T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Conditionals" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-26T00:00:00-06:00","datePublished":"2022-11-26T00:00:00-06:00","description":"Our group repo","headline":"Conditionals","mainEntityOfPage":{"@type":"WebPage","@id":"https://f1nnc.github.io/dolphins/conditionals"},"url":"https://f1nnc.github.io/dolphins/conditionals"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/dolphins/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://f1nnc.github.io/dolphins/feed.xml" title="GroupDolphin" /><link rel="shortcut icon" type="image/x-icon" href="/dolphins/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/dolphins/">GroupDolphin</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/dolphins/about/">About Me</a><a class="page-link" href="/dolphins/search/">Search</a><a class="page-link" href="/dolphins/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Conditionals</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-26T00:00:00-06:00" itemprop="datePublished">
+        Nov 26, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/dolphins/categories/#tri2lesson">tri2lesson</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/F1nnC/dolphins/tree/master/_notebooks/2022-11-26-conditionalslesson.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/dolphins/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/F1nnC/dolphins/master?filepath=_notebooks%2F2022-11-26-conditionalslesson.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/dolphins/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/F1nnC/dolphins/blob/master/_notebooks/2022-11-26-conditionalslesson.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/dolphins/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FF1nnC%2Fdolphins%2Fblob%2Fmaster%2F_notebooks%2F2022-11-26-conditionalslesson.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/dolphins/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Learning-Objectives-(Some-Things-You-Might-Want-to-Keep-Note-Of)">Learning Objectives (Some Things You Might Want to Keep Note Of) </a></li>
+<li class="toc-entry toc-h3"><a href="#Key-Terms">Key Terms </a></li>
+<li class="toc-entry toc-h3"><a href="#Hacks">Hacks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-11-26-conditionalslesson.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Learning-Objectives-(Some-Things-You-Might-Want-to-Keep-Note-Of)">
+<a class="anchor" href="#Learning-Objectives-(Some-Things-You-Might-Want-to-Keep-Note-Of)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Objectives (Some Things You Might Want to Keep Note Of)<a class="anchor-link" href="#Learning-Objectives-(Some-Things-You-Might-Want-to-Keep-Note-Of)"> </a>
+</h3>
+<ul>
+<li>Conditionals allow for the expression of algorithms that utilize selection without a programming language.</li>
+<li>Writing conditional statements is key to computer science.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Key-Terms">
+<a class="anchor" href="#Key-Terms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Terms<a class="anchor-link" href="#Key-Terms"> </a>
+</h3>
+<ul>
+<li>Selection: The specific block of code that will execute depending on the algorithm condition returning true or false.</li>
+<li>Algorithm: "A finite set of instructions that accomplish a specific task."</li>
+<li>Conditional Statement / If-Statement: A statement that affects the sequence of control by executing certain statements depending on the value of a boolean.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below is an example of an algorithm in JavaScript that uses selection:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">isEven</span><span class="p">(</span><span class="nx">parameter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">parameter</span> <span class="o">%</span> <span class="mf">2</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The number is even."</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">parameter</span> <span class="o">%</span> <span class="mf">2</span> <span class="o">!=</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The number is odd."</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">isEven</span><span class="p">(</span><span class="mf">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The number is even.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A computer science student such as yourself will see conditional statements in JavaScript a lot. Below is an example of one in action:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mf">30</span> <span class="o">==</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The condition is true"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That is one conditional statement, but this algorithm is too simple to have anything done with it. Below is an algorithm building on the previous algorithm:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mf">30</span> <span class="o">==</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The condition is true"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="mf">30</span> <span class="o">!=</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The condition is false"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The condition is false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Conditional statements can be used for many a purpose. The algorithm above was quite simple, but conditionals can be found in more complex algorithms.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Shruti, this is where you can start editing. ACCORDING TO THE THIRD VIDEO IN SECTION 3.6. Create content below this section, and add hacks that need to be completed depending on the video. Delete this markdown section after you're done. Best of luck!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h3>
+<ul>
+<li>For the first hack, pretend you are a school's test grader. Create an array with integers, each integer representing one score from a student's taken tests. If the average of the student's test scores are at least 75 percent, then display that the student is elligible for credit, and if not, display that the student must retake the tests over break. </li>
+<li>The second hack is more number-oriented. Create an algorithm that calculates the sum of two numbers, then determines whether the sum is greater than or less than 100.</li>
+<li>The hacks above was heavily derived from CollegeBoard. As a computer science student, you should be able to create an algorithm utilizing conditionals. Try something number-oriented if you get stuck. Creativity gets points.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/dolphins/conditionals" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/dolphins/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/dolphins/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/dolphins/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Our group repo</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="” https://github.com/nighthawkcoders “" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/dolphins/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://twitter.com/NighthawkCoding “" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/dolphins/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="” https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q “" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/dolphins/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
