@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -723,6 +723,345 @@ The exam reference sheet provides:</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>
+
+</p>
+<div class="container bg-primary">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4">Binary Math with Conversions</span>
+    </header>
+    <div class="row justify-content-md-center">
+        <div class="col-8">
+            <table class="table">
+            <tr id="table">
+                <th>Plus</th>
+                <th>Binary</th>
+                <th>Octal</th>
+                <th>Hexadecimal</th>
+                <th>Decimal</th>
+                <th>Minus</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="Radd1" onclick="addR(1)">+1</button></td>
+                <td id="binaryR">00000000</td>
+                <td id="octalR">0</td>
+                <td id="hexadecimalR">0</td>
+                <td id="decimalR">0</td>
+                <td><button type="button" id="Rsub1" onclick="addR(-1)">-1</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="Gadd1" onclick="addG(1)">+1</button></td>
+                <td id="binaryG">00000000</td>
+                <td id="octalG">0</td>
+                <td id="hexadecimalG">0</td>
+                <td id="decimalG">0</td>
+                <td><button type="button" id="Gsub1" onclick="addG(-1)">-1</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="Badd1" onclick="addB(1)">+1</button></td>
+                <td id="binaryB">00000000</td>
+                <td id="octalB">0</td>
+                <td id="hexadecimalB">0</td>
+                <td id="decimalB">0</td>
+                <td><button type="button" id="Bsub1" onclick="addB(-1)">-1</button></td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-12">
+            
+             
+             
+             
+            <table class="table">
+            <tr>
+                
+                
+                <td><input type="text" id="digitR0" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR1" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR2" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR3" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR4" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR5" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR6" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitR7" value="0" size="1" readonly></td>
+                
+            </tr>
+            <tr>
+                
+                
+                <td><input type="text" id="digitG0" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG1" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG2" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG3" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG4" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG5" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG6" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitG7" value="0" size="1" readonly></td>
+                
+            </tr>
+            <tr>
+                
+                
+                <td><input type="text" id="digitB0" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB1" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB2" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB3" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB4" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB5" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB6" value="0" size="1" readonly></td>
+                
+                <td><input type="text" id="digitB7" value="0" size="1" readonly></td>
+                
+            </tr>
+            </table>
+        </div>
+        <div class="container" id="container">
+        <style>
+            .container {
+                width: auto;
+                max-width: 900px;
+                padding: 20px 30px;
+                border-radius: 10px;
+            }
+        </style>
+    </div>
+</div>
+<script>
+    var color = '';
+    var colorR = 0;
+    var colorG = 0;
+    var colorB = 0;
+    const RED = 8;
+    const GREE = 8;
+    const BLUE = 8;
+    const MAX = 2 ** RED - 1;
+
+
+
+    function getBitsR() {
+        let bitsR = "";
+        for(let i = 0; i < RED; i++) {
+        bitsR = bitsR + document.getElementById('digitR' + i).value;
+        }
+        return bitsR;
+    }
+    function getBitsG() {
+        let bitsG = "";
+        for(let i = 0; i < GREE; i++) {
+        bitsG = bitsG + document.getElementById('digitG' + i).value;
+        }
+        return bitsG;
+    }
+    function getBitsB() {
+        let bitsB = "";
+        for(let i = 0; i < BLUE; i++) {
+        bitsB = bitsB + document.getElementById('digitB' + i).value;
+        }
+        return bitsB;
+    }
+    function decimal_R_base(decR, base) {
+        let conversionR = "";
+        // loop to convert to base
+        do {
+        let digitR = decR % base;
+        conversionR = "" + digitR + conversionR; // what does this do?
+        decR = ~~(decR / base);         // what does this do?
+        } while (decR > 0);                  // why while at the end? what is ~~?
+        // loop to pad with zeros
+        if (base === 2) {                        // only pad for binary conversions
+        for (let i = 0; conversionR.length < RED; i++) {
+            conversionR = "0" + conversionR;
+        }
+        }
+        return conversionR;
+    }
+    function decimal_G_base(decG, base) {
+        let conversionG = "";
+        // loop to convert to base
+        do {
+        let digitG = decG % base;
+        conversionG = "" + digitG + conversionG; // what does this do?
+        decG = ~~(decG / base);         // what does this do?
+        } while (decG > 0);                  // why while at the end? what is ~~?
+        // loop to pad with zeros
+        if (base === 2) {                        // only pad for binary conversions
+        for (let i = 0; conversionG.length < GREE; i++) {
+            conversionG = "0" + conversionG;
+        }
+        }
+        return conversionG;
+    }
+    function decimal_B_base(decB, base) {
+        let conversionB = "";
+        // loop to convert to base
+        do {
+        let digitB = decB % base;
+        conversionB = "" + digitB + conversionB; // what does this do?
+        decB = ~~(decB / base);         // what does this do?
+        } while (decB > 0);                  // why while at the end? what is ~~?
+        // loop to pad with zeros
+        if (base === 2) {                        // only pad for binary conversions
+        for (let i = 0; conversionB.length < BLUE; i++) {
+            conversionB = "0" + conversionB;
+        }
+        }
+        return conversionB;
+    }
+    // setter for DOM values
+    function setConversionsR(binaryR) {
+        document.getElementById('binaryR').innerHTML = binaryR;
+        // Octal conversion
+        document.getElementById('octalR').innerHTML = parseInt(binaryR, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('hexadecimalR').innerHTML = parseInt(binaryR, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('decimalR').innerHTML = parseInt(binaryR, 2).toString();
+    }
+    //
+    function setConversionsG(binaryG) {
+        document.getElementById('binaryG').innerHTML = binaryG;
+        // Octal conversion
+        document.getElementById('octalG').innerHTML = parseInt(binaryG, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('hexadecimalG').innerHTML = parseInt(binaryG, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('decimalG').innerHTML = parseInt(binaryG, 2).toString();
+    }
+    function setConversionsB(binaryB) {
+        document.getElementById('binaryB').innerHTML = binaryB;
+        // Octal conversion
+        document.getElementById('octalB').innerHTML = parseInt(binaryB, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('hexadecimalB').innerHTML = parseInt(binaryB, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('decimalB').innerHTML = parseInt(binaryB, 2).toString();
+    }
+
+    // toggle selected bit and recalculate
+
+    // add is positive integer, subtract is negative integer
+    function addR(n) {
+        let binaryR = getBitsR();
+        // convert to decimal and do math
+        let decR = parseInt(binaryR, 2);
+        if (n > 0) {  // PLUS
+        decR = MAX === decR ? 0 : decR += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decR = 0 === decR ? MAX : decR += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binaryR = decimal_R_base(decR, 2);
+        // update conversions
+        setConversionsR(binaryR);
+        // update bits
+        for (let i = 0; i < binaryR.length; i++) {
+        let digitR = binaryR.substr(i, 1);
+        document.getElementById('digitR' + i).value = digitR;
+        colorR = decR.toString(10);
+        getColor();
+        console.log(color);
+        document.getElementById("container").style.background = color;
+        }
+    }
+    function addG(n) {
+        let binaryG = getBitsG();
+        // convert to decimal and do math
+        let decG = parseInt(binaryG, 2);
+        if (n > 0) {  // PLUS
+        decG = MAX === decG ? 0 : decG += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decG = 0 === decG ? MAX : decG += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binaryG = decimal_G_base(decG, 2);
+        // update conversions
+        setConversionsG(binaryG);
+        // update bits
+        for (let i = 0; i < binaryG.length; i++) {
+        let digitG = binaryG.substr(i, 1);
+        document.getElementById('digitG' + i).value = digitG;
+        colorG = decG.toString(10);
+        getColor();
+        console.log(color);
+        document.getElementById("container").style.background = color;
+        }
+    }
+    function addB(n) {
+        let binaryB = getBitsB();
+        // convert to decimal and do math
+        let decB = parseInt(binaryB, 2);
+        if (n > 0) {  // PLUS
+        decB = MAX === decB ? 0 : decB += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decB = 0 === decB ? MAX : decB += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binaryB = decimal_B_base(decB, 2);
+        // update conversions
+        setConversionsB(binaryB);
+        // update bits
+        for (let i = 0; i < binaryB.length; i++) {
+        let digitB = binaryB.substr(i, 1);
+        document.getElementById('digitB' + i).value = digitB;
+        colorB = decB.toString(10);
+        getColor();
+        console.log(color);
+        document.getElementById("container").style.background = color;
+        }
+    }
+
+    function getColor()
+    {
+        color = '#';
+        if (parseInt(colorR, 10) > 15) {
+            color += parseInt(colorR, 10).toString(16);
+        } else {
+            color += '0';
+            color += parseInt(colorR, 10).toString(16);
+        }
+
+        if (parseInt(colorG, 10) > 15) {
+            color += parseInt(colorG, 10).toString(16);
+        } else {
+            color += '0';
+            color += parseInt(colorG, 10).toString(16);
+        }
+
+        if (parseInt(colorB, 10) > 15) {
+            color += parseInt(colorB, 10).toString(16);
+        } else {
+            color += '0';
+            color += parseInt(colorB, 10).toString(16);
+        }
+    }
+
+</script>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Hacks">
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
@@ -767,7 +1106,9 @@ The exam reference sheet provides:</p>
 </div>
 </div>
 </div>
+ 
 
+</div>
 
 
   </div><a class="u-url" href="/dolphins/lesson" hidden></a>
