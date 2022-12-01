@@ -15,8 +15,8 @@
         ,"post1": {
             "title": "LESSON PLAN",
             "content": "Lesson 3.5 Finn/Jake . What is a Boolean . The defention of a Boolean is a denoting a system of algebraic notation used to represent logical propositions, especially in computing and electronics. | A boolean expersions are either true or false | What do we use to represent them (Hint think of how domain/range of graph is answered) | . Lets go over some examples . Type Down Below Theese two example . You have to be the age of 16 or older to drive | Each rollercoaster cart holds 4 for people per cart | . # The code for ex:2 # Print the results . Logical Operators . NOT . NOT, it displays the opposite of whatever the data is. Mainly used for true/false, and does not effect the variable. | . isRaining = False result = not(isRaining) print(result) . True . AND . AND, used to evaulte two conditions together and determine if both condintions are met | . grade = 95 if grade &gt; 70 and grade &lt;= 100: print(&quot;You passed the quiz&quot;) . You passed the quiz . OR . OR, when using or the function only looks to see if one of the conditions is met then will | . lives = 1 score = 21 if lives &gt;= 0 or score &gt; 20: print(&quot;end game&quot;) . Hacks . Write a logical experision for this secarino, You win the game if you have at least 20 points and 3 live left or if you have 100 points and more than 0 lives left. | Write a logical experision for example 1 NOT using &gt;= or &lt;= | .",
-            "url": "https://f1nnc.github.io/dolphins/lesson",
-            "relUrl": "/lesson",
+            "url": "https://f1nnc.github.io/dolphins/lesson35",
+            "relUrl": "/lesson35",
             "date": " • Nov 30, 2022"
         }
         
@@ -37,8 +37,8 @@
         ,"post3": {
             "title": "Lesson Plan",
             "content": "Lesson Plan . 3.5) . Essential Questions . What are booleans | How are Booleans used in code Link to 3.5 lesson . | . 3.6) . Essential Questions . What are Conditionals | How are conditionals used in code Link to 3.6 lesson . | . 3.7) . Essential Questions . What is a nested conditional statment? | Can a nested conditional stament give more than two results? | What is an examole of a nested conditional stament Link to 3.7 lesson . Kahoot . | . Homework .",
-            "url": "https://f1nnc.github.io/dolphins/lesson",
-            "relUrl": "/lesson",
+            "url": "https://f1nnc.github.io/dolphins/lessonold",
+            "relUrl": "/lessonold",
             "date": " • Nov 17, 2022"
         }
         
