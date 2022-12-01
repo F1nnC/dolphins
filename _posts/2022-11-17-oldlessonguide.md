@@ -3,7 +3,7 @@ title: Lesson Plan
 layout: post
 comments: true
 description: A hub/guide for 3.5 to 3.7
-permalink: /lesson
+permalink: /lessonold
 categories: [3.5, 3.6, 3.7]
 tags: [html, liquid, javascript]
 type: pbl
