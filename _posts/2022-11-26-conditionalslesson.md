@@ -20,9 +20,10 @@ layout: notebook
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Learning-Objectives-(Some-Things-You-Might-Want-to-Keep-Note-Of)">Learning Objectives (Some Things You Might Want to Keep Note Of)<a class="anchor-link" href="#Learning-Objectives-(Some-Things-You-Might-Want-to-Keep-Note-Of)"> </a></h3><ul>
+<h3 id="Learning-Objectives-/-Some-Things-You-Might-Want-to-Keep-Note-Of">Learning Objectives / Some Things You Might Want to Keep Note Of<a class="anchor-link" href="#Learning-Objectives-/-Some-Things-You-Might-Want-to-Keep-Note-Of"> </a></h3><ul>
 <li>Conditionals allow for the expression of algorithms that utilize selection without a programming language.</li>
 <li>Writing conditional statements is key to computer science.</li>
+<li>Determine the result of conditional statements</li>
 </ul>
 
 </div>
@@ -41,6 +42,12 @@ layout: notebook
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conditional-Statements-in-JavaScript">Conditional Statements in JavaScript<a class="anchor-link" href="#Conditional-Statements-in-JavaScript"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Below is an example of an algorithm in JavaScript that uses selection:</p>
 
 </div>
@@ -53,33 +60,19 @@ layout: notebook
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">isEven</span><span class="p">(</span><span class="nx">parameter</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">parameter</span> <span class="o">%</span> <span class="mf">2</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The number is even.&quot;</span><span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">function</span> <span class="n">isEven</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">parameter</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;The number is even.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">parameter</span> <span class="o">%</span> <span class="mf">2</span> <span class="o">!=</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The number is odd.&quot;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">parameter</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;The number is odd.&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">isEven</span><span class="p">(</span><span class="mf">4</span><span class="p">)</span>
+<span class="n">isEven</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The number is even.
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -100,8 +93,8 @@ layout: notebook
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mf">30</span> <span class="o">==</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The condition is true&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mi">30</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;The condition is true&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -126,29 +119,15 @@ layout: notebook
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mf">30</span> <span class="o">==</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The condition is true&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="mi">30</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;The condition is true&quot;</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="mf">30</span> <span class="o">!=</span> <span class="mf">7</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The condition is false&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="mi">30</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;The condition is false&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The condition is false
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -164,33 +143,159 @@ layout: notebook
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-Objectives">Learning Objectives<a class="anchor-link" href="#Learning-Objectives"> </a></h2><ul>
-<li>Determine the result of conditional statements</li>
-</ul>
+<h3 id="Binary-Numbers">Binary Numbers<a class="anchor-link" href="#Binary-Numbers"> </a></h3><p>Let's do some truth tables!</p>
+<p>Speed round</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Essential-Knowledge">Essential Knowledge<a class="anchor-link" href="#Essential-Knowledge"> </a></h2><p>Conditional statements ("if" statements) affect the sequential flow of control by executing different statements based on the value of a Boolean expression.
-The exam reference sheet provides:</p>
-<p>In which the code in block of statements is executed if the Boolean expression condition evaluates to true; no action is taken if condition evaluates to false</p>
-<h2 id="What-is-displayed-after-this-code-segment?">What is displayed after this code segment?<a class="anchor-link" href="#What-is-displayed-after-this-code-segment?"> </a></h2>
+<h1 id="Challenges">Challenges<a class="anchor-link" href="#Challenges"> </a></h1><h4 id="Challenges-Related-to-the-Lesson-That-I-Solved-Myself">Challenges Related to the Lesson That I Solved Myself<a class="anchor-link" href="#Challenges-Related-to-the-Lesson-That-I-Solved-Myself"> </a></h4><p>Note: I did these in Python</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Level-I:-Vowel-Count">Level I: Vowel Count<a class="anchor-link" href="#Level-I:-Vowel-Count"> </a></h3><p>Return the number (count) of vowels in the given string. We will consider a, e, i, o, u as vowels for this challenge (but not y). The input string will only consist of lower case letters and/or spaces.</p>
+<p><em>Hint: If you use a lot of if-statements and there are more than one outcome, that is to be expected. If not, don't panic, just keep trying.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Level-II:-Who-Likes-It?">Level II: Who Likes It?<a class="anchor-link" href="#Level-II:-Who-Likes-It?"> </a></h3><p>You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.</p>
+<p>Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:</p>
+<p>[]                                --&gt;  "no one likes this"</p>
+<p>["Peter"]                         --&gt;  "Peter likes this"</p>
+<p>["Jacob", "Alex"]                 --&gt;  "Jacob and Alex like this"</p>
+<p>["Max", "John", "Mark"]           --&gt;  "Max, John and Mark like this"</p>
+<p>["Alex", "Jacob", "Mark", "Max"]  --&gt;  "Alex, Jacob and 2 others like this"</p>
+<p>Note: For 4 or more names, the number in "and 2 others" simply increases.</p>
+<p><em>Hint: This requires you to combine knowledge on lists along with the conditionals you learned in this lesson.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Level-III:-Mutliples-of-3-or-5">Level III: Mutliples of 3 or 5<a class="anchor-link" href="#Level-III:-Mutliples-of-3-or-5"> </a></h3><p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+<p>Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).</p>
+<p>Note: If the number is a multiple of both 3 and 5, only count it once.</p>
+<p><em>Hint: What do you know about for loops? Since your code incorporates a list of numbers from 1 to the max number, can you use for loops along with conditionals?</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Level-IV:-Likes-vs.-Dislikes">Level IV: Likes vs. Dislikes<a class="anchor-link" href="#Level-IV:-Likes-vs.-Dislikes"> </a></h3><p>YouTube had a like and a dislike button, which allowed users to express their opinions about particular content. It was set up in such a way that you cannot like and dislike a video at the same time. There are two other interesting rules to be noted about the interface: Pressing a button, which is already active, will undo your press. If you press the like button after pressing the dislike button, the like button overwrites the previous "Dislike" state. The same is true for the other way round.</p>
+<p>Create a function that takes in a list of button inputs and returns the final state.</p>
+<p>Examples:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">/*</span>
+<span class="n">like_or_dislike</span><span class="p">([</span><span class="n">Dislike</span><span class="p">])</span> <span class="err">➞</span> <span class="n">Dislike</span>
+<span class="n">like_or_dislike</span><span class="p">([</span><span class="n">Like</span><span class="p">,</span> <span class="n">Like</span><span class="p">])</span> <span class="err">➞</span> <span class="n">Nothing</span>
+<span class="n">like_or_dislike</span><span class="p">([</span><span class="n">Dislike</span><span class="p">,</span> <span class="n">Like</span><span class="p">])</span> <span class="err">➞</span> <span class="n">Like</span>
+<span class="n">like_or_dislike</span><span class="p">([</span><span class="n">Like</span><span class="p">,</span> <span class="n">Dislike</span><span class="p">,</span> <span class="n">Dislike</span><span class="p">])</span> <span class="err">➞</span> <span class="n">Nothing</span>
+<span class="o">*/</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notes</p>
+<ul>
+<li>If no button is currently active, return Nothing.</li>
+<li>If the list is empty, return Nothing.</li>
+</ul>
+<p><em>Hint: This is like level III, but harder, so don't give up!</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Level-V:-Find-the-Odd-Number">Level V: Find the Odd Number<a class="anchor-link" href="#Level-V:-Find-the-Odd-Number"> </a></h3><p>Given an array of integers, find the one that appears an odd number of times.</p>
+<p>There will always be only one integer that appears an odd number of times.</p>
+<p>Examples:</p>
+<p>[7] should return 7, because it occurs 1 time (which is odd).</p>
+<p>[0] should return 0, because it occurs 1 time (which is odd).</p>
+<p>[1,1,2] should return 2, because it occurs 1 time (which is odd).</p>
+<p>[0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).</p>
+<p>[1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).</p>
+<p><em>Hint: This is by far the hardest challenge out of all of these, in my opinion, and it took me about 3 or 4 months to solve this one.</em></p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h3><ul>
-<li>For the first hack, pretend you are a school's test grader. Create an array with integers, each integer representing one score from a student's taken tests. If the average of the student's test scores are at least 75 percent, then display that the student is elligible for credit, and if not, display that the student must retake the tests over break. </li>
-<li>The second hack is more number-oriented. Create an algorithm that calculates the sum of two numbers, then determines whether the sum is greater than or less than 100.</li>
-<li>The hacks above was heavily derived from CollegeBoard. As a computer science student, you should be able to create an algorithm utilizing conditionals. Try something number-oriented if you get stuck. Creativity gets points.</li>
+<li>1 point for defining all the key terms in your own words. 0.5 points if you use examples that show you truly understand it.</li>
+<li>1 point for writing a program that uses binary conditional logic. 0.5 points if it is original and shows complexity</li>
+<li>1 extra point for each challenge that you program or pair program. </li>
+<li>0.5 points for your review ticket looking nice, or you convincing me that it does.</li>
+<li>1 point for each and any extra work you do that helps show your understanding of conditionals.</li>
 </ul>
 
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">oddoccuringnums</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">numlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numlist</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">numlist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">oddoccuringnums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">oddoccuringnums</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[4]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 
